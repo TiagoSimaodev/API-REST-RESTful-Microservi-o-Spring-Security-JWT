@@ -1,10 +1,11 @@
--API-REST-RESTful /Microserviço-Spring Security + JWT
+📚-API-REST-RESTful /Microserviço-Spring Security + JWT
 
 Esta API é uma aplicação backend robusta desenvolvida com Spring Boot, que cobre desde fundamentos dos microserviços, arquitetura RESTful, 
 até temas avançados como segurança com JWT, controle de erros, cache, versionamento, integração CORS e consumo de APIs externas.
 
 
 🚀 Tecnologias Utilizadas
+
 Java 17+
 
 Spring Boot 
