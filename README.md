@@ -85,7 +85,6 @@ Clone o repositório:
 bash
 Copiar
 Editar
-git clone https://github.com/seuusuario/seuprojeto.git
 Importe o projeto em sua IDE (STS, IntelliJ, Eclipse).
 
 Configure o banco de dados no arquivo application.properties ou application.yml.
