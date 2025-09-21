@@ -1,10 +1,10 @@
-🔐 ###API RESTful com Spring Boot, Microserviços e JWT
+🔐 API RESTful com Spring Boot, Microserviços e JWT
 
 Uma aplicação backend robusta desenvolvida com Spring Boot, projetada para demonstrar boas práticas em arquitetura RESTful, microsserviços e segurança com JWT.
 
 Este projeto serve como base para sistemas modernos que exigem autenticação segura, escalabilidade e integração com aplicações front-end.
 
-✨ ###Funcionalidades Principais
+✨ Funcionalidades Principais
 
 Autenticação e Autorização Segura
 
@@ -40,7 +40,7 @@ Uso de status HTTP corretos
 
 Versionamento de API
 
-📦 ###Tecnologias Utilizadas
+📦 Tecnologias Utilizadas
 
 Java 17
 
@@ -80,7 +80,9 @@ cd API-REST-RESTful-Microservico-Spring-Security-JWT
 
 # Configure o banco de dados no application.properties
 spring.datasource.url=jdbc:postgresql://localhost:5432/sua-base
+
 spring.datasource.username=seu-usuario
+
 spring.datasource.password=sua-senha
 
 # Compile e execute
@@ -88,15 +90,22 @@ mvn spring-boot:run
 
 
 A API estará disponível em:
+
 👉 http://localhost:8080/api/v1
 
+
 📄 Exemplos de Endpoints
-🔑 Autenticação
+
+
+🔑 Autenticação:
+
 POST /auth/login
 {
   "email": "usuario@email.com",
   "senha": "123456"
 }
+
+
 
 👤 Usuários
 GET /usuarios
@@ -133,7 +142,7 @@ Este projeto está sob a licença MIT. Veja o arquivo LICENSE
 
 👤 Autor
 
-Francisco Tiago Rodrigues Simão
+Tiago Simao
 
 💼 LinkedIn
 
