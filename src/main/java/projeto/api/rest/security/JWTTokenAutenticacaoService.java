@@ -43,7 +43,7 @@ public class JWTTokenAutenticacaoService {
 				.signWith(SignatureAlgorithm.HS512, SECRET).compact(); //compactação e algoritmos de geração de senha
 		
 		//Junta o token com o prefixo
-		String token = TOKEN_PREFIX + "" + JWT; //Bearer 121721819217uhww81
+		String token = TOKEN_PREFIX + " " + JWT; //Bearer 121721819217uhww81
 		
 		//adiciona no cabeçalho http
 		response.addHeader(HEADER_STRING, token); // Authorization: Bearer 121721819217uhww81
@@ -52,7 +52,12 @@ public class JWTTokenAutenticacaoService {
 
 		//liberando resposta para portas diferentes que usam api, ou caso cliente web
 			LiberacaoCors(response);
-		
+			
+		// liberando resposta para porta diferente, para o angular
+			//response.addHeader("Access-Control-Allow-Origin", "*");
+			
+			
+			
 		// Escreve token com resposta no corpo http 
 		response.getWriter().write("{\"Authorization\": \""+token+"\"}");
 		
