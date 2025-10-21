@@ -1,135 +1,149 @@
-📚-API-REST-RESTful /Microserviço-Spring Security + JWT
+🔐 API RESTful com Spring Boot, Microserviços e JWT
 
-Esta API é uma aplicação backend robusta desenvolvida com Spring Boot, que cobre desde fundamentos dos microserviços, arquitetura RESTful, 
-até temas avançados como segurança com JWT, controle de erros, cache, versionamento, integração CORS e consumo de APIs externas.
+Uma aplicação backend robusta desenvolvida com Spring Boot, projetada para demonstrar boas práticas em arquitetura RESTful, microsserviços e segurança com JWT.
 
+Este projeto serve como base para sistemas modernos que exigem autenticação segura, escalabilidade e integração com aplicações front-end.
 
-🚀 Tecnologias Utilizadas
+✨ Funcionalidades Principais
 
-Java 17+
+Autenticação e Autorização Segura
+
+Login com credenciais e geração de token JWT
+
+Proteção de rotas privadas
+
+Refresh token para renovação de sessões
+
+CRUD de Usuários
+
+Cadastro, atualização, exclusão e listagem de usuários
+
+Validação de dados e respostas padronizadas
+
+Arquitetura de Microsserviços
+
+Serviços independentes comunicando-se via REST
+
+Facilidade de escalabilidade horizontal
+
+Tratamento Global de Exceções
+
+Retorno padronizado de erros para o cliente
+
+Logs estruturados para monitoramento
+
+Boas Práticas REST
+
+Padrões de nomenclatura
+
+Uso de status HTTP corretos
+
+Versionamento de API
+
+📦 Tecnologias Utilizadas
+
+Java 17
 
 Spring Boot 
 
-Spring bot REST / RESTFULL
-
-Spring Security + JWT
+Spring Web
 
 Spring Data JPA
 
-Maven
+Spring Security + JWT
 
-HikariCP (pool de conexões)
+Hibernate (ORM)
 
-PostgreSQL 
+PostgreSQL (persistência de dados)
 
-PostMan (para testes)
+Maven (gerenciamento de dependências)
 
-🔧 Funcionalidades Implementadas
+JUnit 5 (testes unitários)
 
- microserviços e integração via APIs REST
+Lombok (produtividade)
 
-Cadastro de Usuario
+🚀 Como Executar o Projeto
+Pré-requisitos
 
-Modelagem correta de URIs e regras RESTful
+Java 17 instalado
 
-Desenvolvimento da API RESTful
+Maven 3+
 
-Criação de controllers, serviços e endpoints REST (GET, POST, PUT, DELETE)
+PostgreSQL em execução
 
-Passagem de parâmetros e customização de URLs
+Passos
+# Clone o repositório
+git clone https://github.com/tiagosimaodev/API-REST-RESTful-Microservico-Spring-Security-JWT.git
 
-Retorno de dados JSON
+# Acesse a pasta do projeto
+cd API-REST-RESTful-Microservico-Spring-Security-JWT
 
-Relacionamento um-para-muitos e tratamento de JSON para evitar recursividade
+# Configure o banco de dados no application.properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/sua-base
 
-Cadastro, atualização e remoção via endpoints
+spring.datasource.username=seu-usuario
 
-Testes e Ferramentas
-Testes com PostMan para validação e debug de endpoints
+spring.datasource.password=sua-senha
 
-Empacotamento e Deploy
-Geração de artefatos JAR e WAR
+# Compile e execute
+mvn spring-boot:run
 
-Implantação da API em servidores e hospedagem
 
-Segurança
-Configuração de Spring Security com papéis (ROLE)
+A API estará disponível em:
 
-Autenticação e autorização usando JWT
+👉 http://localhost:8080/api/v1
 
-Implementação completa do fluxo JWT (filtros, geração, validação)
 
-Controle de acesso e restrição de dados sensíveis
+📄 Exemplos de Endpoints
 
-Atualização e tratamento de tokens expirados
 
-Cross-Origin Resource Sharing (CORS)
-Configuração granular e testes de CORS para acesso externo via AJAX
+🔑 Autenticação:
 
-Funcionalidades Avançadas
-Versionamento da API
+POST /auth/login
+{
+  "email": "usuario@email.com",
+  "senha": "123456"
+}
 
-Pool de conexões com HikariCP para alta performance
 
-Implementação e gerenciamento de cache (CacheEvict, CachePut)
 
-Controle de erros customizado com @ControllerAdvice e @ExceptionHandler
+👤 Usuários
+GET /usuarios
+Authorization: Bearer <seu-token>
 
-Padrão DTO para transferência de dados entre camadas
+📈 Próximas Funcionalidades (Roadmap)
 
-Consumo da API externa ViaCEP para preenchimento de dados
+Integração com Docker e Docker Compose
 
-🖥️ Como executar
-Clone o repositório:
+Monitoramento com Spring Actuator
 
-bash
-Copiar
-Editar
-git clone https://github.com/seuusuario/seuprojeto.git
-Importe o projeto em sua IDE (STS, IntelliJ, Eclipse).
+Integração com mensageria (Kafka ou RabbitMQ)
 
-Configure o banco de dados no arquivo application.properties ou application.yml.
+Deploy em ambiente cloud (Heroku/AWS)
 
-Execute a aplicação pela classe principal @SpringBootApplication.
+🤝 Contribuição
 
-Utilize PostMan para consumir e testar os endpoints.
+Contribuições são bem-vindas! Para colaborar:
 
-Para gerar artefatos executáveis:
+Faça um fork do repositório
 
-bash
-Copiar
-Editar
-mvn clean package
-Faça o deploy do WAR em seu servidor, se necessário.
+Crie uma branch para sua feature (git checkout -b feature/minha-feature)
 
-📂 Estrutura do Projeto (MVC)
-css
-Copiar
-Editar
-src/
-└── main/
-    ├── java/
-    │   └── com.seuprojeto/
-    │       ├── controller/
-    │       ├── model/
-    │       ├── repository/
-    │       ├── service/
-    │       └── security/
-    └── resources/
-        ├── static/
-        ├── templates/
-        └── application.properties
-🧪 Validações
-Backend: uso de anotações para validação de campos (Spring Validation).
+Commit suas alterações (git commit -m 'Adiciona nova feature')
 
-Frontend (quando aplicável): uso de JavaScript para validação em tempo real e feedback.
+Push para a branch (git push origin feature/minha-feature)
 
-🚧 Status do Projeto
-Será implementado agora o front-end que será com Angular, em breve o projeto completo.
+Abra um Pull Request
 
-👨‍💻 Autor
-Tiago Simão
-Desenvolvedor Java Full Stack
-📧 tiagosimaorodri123@gmail.com
-GitHub: https://github.com/TiagoSimaodev
-LinkedIn: https://www.linkedin.com/in/tiago-simao-685015193/
+📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo LICENSE
+ para mais detalhes.
+
+👤 Autor
+
+Tiago Simao
+
+💼 LinkedIn
+
+💻 GitHub
