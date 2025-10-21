@@ -35,7 +35,8 @@ import projeto.api.rest.model.Usuario;
 import projeto.api.rest.model.UsuarioDTO;
 import projeto.api.rest.repository.UsuarioRepository;
 
-@CrossOrigin
+
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(value = "/usuario")
 public class IndexController {
@@ -95,7 +96,6 @@ public class IndexController {
 	
 	//exeplo para um usuario que seja um processo lento, correção usando cache para agilizar
 	@GetMapping(value = "/", produces = "application/json")
-	@CacheEvict(value = "cacheusuarios",allEntries = true)
 	@CachePut("cacheusuarios")
 	public ResponseEntity<List<Usuario>> usuarios () throws InterruptedException{
 		
@@ -104,6 +104,20 @@ public class IndexController {
 		
 		return new ResponseEntity<List<Usuario>>(list, HttpStatus.OK);
 	}
+	
+	
+	//END-POINT CONSULTA DE USUARIO POR NOME.
+	@GetMapping(value = "/usuarioPorNome/{nome}", produces = "application/json")
+	@CachePut("cacheusuarios")
+	public ResponseEntity<List<Usuario>> usuarioPorNome (@PathVariable("nome") String nome) throws InterruptedException{
+		
+		List<Usuario> list = (List<Usuario>)usuarioRepository.findUserByNome(nome);
+		
+		
+		return new ResponseEntity<List<Usuario>>(list, HttpStatus.OK);
+	}
+	
+	
 	
 	@PostMapping(value="/", produces = "application/json")
 	public ResponseEntity<Usuario> cadastrar(@RequestBody Usuario usuario) throws Exception{
