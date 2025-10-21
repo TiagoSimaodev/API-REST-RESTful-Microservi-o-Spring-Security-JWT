@@ -34,13 +34,15 @@ public class ProjetospringrestapiApplication implements WebMvcConfigurer  {
 
 	// Mapeamento Global, que refletem em todo o sistema!  
 	//serve para liberar especificos para cada, seja metodos e as origens.
-	@Override
-	public void addCorsMappings(CorsRegistry registry) {
-		registry.addMapping("/usuario/**")
+
+	/*	@Override
+			public void addCorsMappings(CorsRegistry registry) {
+			registry.addMapping("/usuario/**")
 		.allowedMethods("*")
 		.allowedOrigins("*");
 		//liberando o mapeamento de usuario para todas as origens
 	}
-
+*/
 	
 }
+
